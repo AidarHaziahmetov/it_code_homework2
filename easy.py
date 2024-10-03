@@ -1,5 +1,5 @@
 class Car:
-    def __init__(self, speed, color, name, is_police: bool) -> None:
+    def __init__(self, speed, color, name, is_police: bool = False) -> None:
         self.speed = speed
         self.color = color
         self.name = name
@@ -9,9 +9,9 @@ class Car:
         print(f"{self.name} едет")
 
     def stop(self):
-        print(f"{self.name} остановилась")
+        print(f"{self.name} остановился")
 
-    def turn(self, direction):
+    def turn(self, direction: str):
         print(f"{self.name} поворачивает {direction}")
 
 
@@ -30,3 +30,13 @@ class WorkCar(Car):
 class PoliceCar(Car):
     def __init__(self, speed, color, name, is_police: bool = True) -> None:
         super().__init__(speed, color, name, is_police)
+
+
+lamba = SportCar(
+    300,
+    "желтый",
+    "Ламборгини",
+)
+lamba.go()
+lamba.turn("налево")
+lamba.stop()
